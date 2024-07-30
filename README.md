@@ -1,70 +1,76 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Flight Arrival Departure App
+The Flight Arrival Departure Management app is a web application that facilitates various functionalities related to flight management, subscriptions, and notifications. The application allows users to view all flight data, with delay flights highlighted for easy identification. Users can subscribe to their preferred flight status (delay, arrival, departure) and receive email notifications based on their subscription preferences. On the admin side, users with appropriate permissions can add new flights, update flight statuses (arrival, departure, delay), and download flight data.
 
-## Available Scripts
 
-In the project directory, you can run:
+### Features
+## User Functionality
+1. View All Flight Data: Users can view all flight data, and delayed flights are highlighted to stand out.
 
-### `npm start`
+2. Flight Status Subscription: Users can subscribe to their preferred flight status (delay, arrival, departure) to receive notifications.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Email Notifications: Users will receive email notifications based on their subscription preferences.(user will recive email notifications from abhishekjha.documents@gmail.com)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Admin Functionality:
 
-### `npm test`
+1. Add New Flights: Admin users can add new flights to the system.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Update Flight Status: Admin users can update flight statuses such as arrival, departure, and delay.
 
-### `npm run build`
+3. Download Flight Data: Admin users can download flight data for further analysis. (Currently support .CSV format)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation and Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+Before running the Flight Arrival Departure App, you need to have the following software installed on your system:
 
-### `npm run eject`
+1. Node.js (https://nodejs.org)
+3. Backend Server (assuming it's already set up and running at http://localhost:3000 and http://localhost:3001 for flight-service and flight-notification service APIs respectively)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Step 1: Clone the repository:
+        git clone [flight-departure-arrival-app](https://github.com/AbhishekJha45/Indigo-Frontend).git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Step 2:move to the given directory
+        cd Indigo-Frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Step 3:Install the dependencies using npm
+        npm install
 
-## Learn More
+# Step 4:Start the angular app
+        npm start                
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Backend servers
+private readonly flightsApiUrl = 'http://localhost:3000/api/flights';
+private readonly flightStatusApiUrl = 'http://localhost:3001/api/flights/flight-status';
+private readonly flightSubscribeApiUrl = 'http://localhost:3001/api/flights/subscribe';
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### App Sign-In Process and Test Account Usage
 
-### Analyzing the Bundle Size
+When signing in to the application, users will be redirected to the firebase authentication UI page for role based access control.
+So if client credentials are used then ui will be loaded as client view where client can access the functionality assigned to them.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Admin Account:
 
-### Making a Progressive Web App
+### User Account:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Admin Role Features
+Add Flights
+Download Flight Data to .CSV file
+Update Flight Status
+View Flight Data
+Subscribe to Flight Status Updates
 
-### Advanced Configuration
+### User Role Features
+View Flight 
+Subscribe to Flight Status Updates
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Feel free to use these test accounts to explore and interact with the various features available to both admin and user roles in the application.             
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Unit Testing
+ng test
+This will execute the unit tests using Karma.
